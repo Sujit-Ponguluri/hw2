@@ -26,12 +26,11 @@
 
 			std::string Clothing::displayString() const{
 			std::string string="";
-			string+=name_+" ";
-			string+=size_+" ";
-			string+=brand_+" ";
-			string+=price_;
+			string+=name_+"\n";
+			string+="Size: " + size_+" Brand: "+brand_+"\n";
+			string+=std::to_string(price_);
 			string+=" ";
-			string+=qty_+" ";
+			string+=std::to_string(qty_)+" left.";
 			return string;
 		}
 

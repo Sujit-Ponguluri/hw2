@@ -3,14 +3,14 @@ CXXFLAGS=-g -Wall -std=c++11
 # Uncomment for parser DEBUG
 #DEFS=-DDEBUG
 
-OBJS=amazon.o user.o db_parser.o product.o product_parser.o util.o book.o clothing.o movie.o amazondatastore.o
+OBJS=amazon.o user.o db_parser.o product.o product_parser.o util.o book.o clothing.o movie.o mydatastore.o
 
 all: amazon
 
 amazon: $(OBJS)
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ $(OBJS)
 
-amazon.o: amazon.cpp db_parser.h amazondatastore.h product_parser.h 
+amazon.o: amazon.cpp db_parser.h mydatastore.h product_parser.h 
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c amazon.cpp
 user.o: user.cpp user.h 
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c user.cpp
@@ -28,8 +28,8 @@ clothing.o: clothing.cpp clothing.h util.h product.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c clothing.cpp
 movie.o: movie.cpp movie.h util.h product.h
 	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c movie.cpp
-amazondatastore.o: amazondatastore.cpp amazondatastore.h datastore.h util.h
-	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c amazondatastore.cpp
+mydatastore.o: mydatastore.cpp mydatastore.h datastore.h util.h
+	$(CXX) $(CXXFLAGS) $(DEFS) -o $@ -c mydatastore.cpp
 
 clean:
 	rm -f *.o amazon

@@ -25,12 +25,11 @@
 
 			std::string Book::displayString() const{
 			std::string string="";
-			string+=name_+" ";
-			string+=author_+" ";
-			string+=isbn_+" ";
-			string+=price_;
+			string+=name_+"\n";
+			string+="Author: " + author_+" ISBN: "+isbn_ +"\n";
+			string+=std::to_string(price_);
 			string+=" ";
-			string+=qty_+" ";
+			string+=std::to_string(qty_)+" left.";
 			return string;
 		}
 

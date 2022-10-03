@@ -26,12 +26,11 @@
 
 			std::string Movie::displayString() const{
 			std::string string="";
-			string+=name_+" ";
-			string+=genre_+" ";
-			string+=rating_+" ";
-			string+=price_;
+			string+=name_+"\n";
+			string+="Genre: " + genre_+" Rating: "+rating_+"\n";
+			string+=std::to_string(price_);
 			string+=" ";
-			string+=qty_+" ";
+			string+=std::to_string(qty_)+" left.";
 			return string;
 		}
 

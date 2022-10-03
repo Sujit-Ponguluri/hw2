@@ -9,7 +9,7 @@
 #include "db_parser.h"
 #include "product_parser.h"
 #include "util.h"
-#include "amazondatastore.h"
+#include "mydatastore.h"
 
 using namespace std;
 struct ProdNameSorter {
@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
      * Declare your derived DataStore object here replacing
      *  DataStore type to your derived type
      ****************/
-    amazondatastore ds= amazondatastore();
+    mydatastore ds= mydatastore();
 
 
 
