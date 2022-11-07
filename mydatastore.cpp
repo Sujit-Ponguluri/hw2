@@ -84,7 +84,7 @@ bool mydatastore::viewCart(std::string user){
 		if(carts.find(user)!=carts.end()){
 			std::queue<Product*> views=carts.at(user);
 			for(int i=0;i<(int)carts.at(user).size();i++){
-				std::cout<<i+1<<": "<< views.front()->displayString()<<std::endl;
+				std::cout<<"Item "<<i+1<<"\n"<< views.front()->displayString()<<std::endl;
 				views.pop();
 			}
 		}
@@ -100,7 +100,7 @@ if(users.find(user)!=users.end()){
 		if(carts.find(user)!=carts.end()){
 			std::queue<Product*> cart=carts.at(user);
 			std::queue<Product*> remaining=std::queue<Product*>();
-			for(int i=0;i<(int)cart.size();i++){
+			while(cart.size()>0){
 				if(cart.front()->getQty()>0 && cart.front()->getPrice()< u->getBalance()){
 					cart.front()->subtractQty(1);
 					u->deductAmount(cart.front()->getPrice());

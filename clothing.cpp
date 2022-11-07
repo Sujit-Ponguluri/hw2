@@ -20,7 +20,13 @@
 			std::set<std::string> rand2;
 			rand2=parseStringToWords(size_);
 			strings=setUnion(strings,rand2);
-			strings.insert(brand_);
+			std::set<std::string> rand3;
+			rand3=parseStringToWords(brand_);
+			strings= setUnion(strings,rand3);
+			std::set<std::string>::iterator it;
+			for (it=strings.begin();it!=strings.end();it++){
+				std::cout<<*it<<std::endl;
+			}
 			return strings;
 		}
 

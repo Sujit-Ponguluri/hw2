@@ -21,10 +21,14 @@ std::set<std::string> parseStringToWords(string rawWords)
 		while(pos != string::npos){
 			string s=convToLower(rawWords.substr(last,pos-last));
 			if(s.size()>1){
-			strings.insert(convToLower(rawWords.substr(last,pos-last)));
+			strings.insert(s);
 			}
 			last=pos+1;
 			pos=rawWords.find_first_of(" ,&.':",last);
+		}
+		string s=convToLower(rawWords.substr(last));
+		if(s.size()>1){
+			strings.insert(s);
 		}
 		return strings;
 

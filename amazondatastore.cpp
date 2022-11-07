@@ -84,7 +84,7 @@ bool amazondatastore::viewCart(std::string user){
 		if(carts.find(user)!=carts.end()){
 			std::queue<Product*> views=carts.at(user);
 			for(int i=0;i<(int)carts.at(user).size();i++){
-				std::cout<<i+1<<": "<< views.front()->displayString()<<std::endl;
+				std::cout<<"Item "<<i+1<<"\n"<< views.front()->displayString()<<std::endl;
 				views.pop();
 			}
 		}
